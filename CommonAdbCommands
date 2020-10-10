@@ -1,0 +1,6 @@
+adb connect <target_ip_address>
+adb disconnect
+adb shell
+adb install <appName.apk>
+adb push <file_name> <destination_path>
+adb pull <file_name>
