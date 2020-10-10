@@ -1,1 +1,1 @@
-# MobileSecurity
+In this repo, my objective is to share my Frida scripts I use during mobile penetartion testing with penetration testers, security researchers and mobile developers. In addition to Frida scripts, I will share mobile security concepts, OS details and attack vectors.
