@@ -1,3 +1,4 @@
+objection --gadget <package_name> explore
 android hooking list classes
 android hooking watch class <className>
 android keystore list
