@@ -1,3 +1,5 @@
+ADB (Android Debug Bridge)
+--------------------------
 adb connect <target_ip_address>
 adb disconnect
 adb shell
@@ -6,3 +8,8 @@ adb uninstall <package_name>
 adb push <file_name> <destination_path>
 adb pull <file_name>
 adb logcat
+
+apktool
+-------
+apktool d <apk_name.apk> //for decompiling
+apktool b <folder> -o <new_apk_name.apk> //for rebuilding
