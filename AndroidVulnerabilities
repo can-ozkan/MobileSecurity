@@ -1,0 +1,5 @@
+Insecure Logging
+----------------
+Android apps may store data as log. If one application stores user sensitive info such as authentication token, session ID, credentials or cookies etc as log, 
+then another application can read the logs of that vulnerable application.
+
