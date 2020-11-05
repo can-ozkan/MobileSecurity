@@ -2,4 +2,16 @@ Insecure Logging
 ----------------
 Android apps may store data as log. If one application stores user sensitive info such as authentication token, session ID, credentials or cookies etc as log, 
 then another application can read the logs of that vulnerable application.
+Insecure logging occurs when developers intentionally or unintentionally log sensitive information such as credentials, session IDs, financial details etc.
+
+adb logcat | grep <pid>
+
+Hardcoding Issues
+-----------------
+Developers sometimes hardcode sensitive information for ease of use. Developers explicitly define a constant value.If any confidential information is 
+hardcoded in source code, then it might be recovered by attackers through reverse engineering methods.
+
+Insecure Data Storage
+---------------------
+Applications may store data in shared_preferences, databases, temporary files and external storage.
 
