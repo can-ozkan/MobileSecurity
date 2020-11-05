@@ -19,6 +19,7 @@ Applications may store data in shared_preferences, databases (use sqlite3 comman
 Access Control Issues
 ---------------------
 Components of an app can be accessed from other apps or users if they are not properly protected. Components such as activities, services,
-content providers are prone to this.
+content providers are prone to this. Some apps can also accept external inputs.
 
 am start -a <activity_name>
+adb shell am start -a <activity_name>
