@@ -13,6 +13,6 @@ hardcoded in source code, then it might be recovered by attackers through revers
 
 Insecure Data Storage
 ---------------------
-Applications may store data in shared_preferences, databases, temporary files and external storage. Insecure data storage is the result of storing sensitive data insecurely
-on the system like poor encryption, clear text etc.
+Applications may store data in shared_preferences, databases, temporary files and external storage. Insecure data storage is the result of storing sensitive data 
+insecurely on the system like poor encryption, clear text etc.
 
