@@ -1,0 +1,38 @@
+Android SDK Tools
+-----------------
+adb
+monitor -> see running processes
+aapt -> used by apktool to package source code into binary form when building apps
+
+Emulator Restrictions
+---------------------
+Have root access
+Cannot make phone calls
+Cannot simulate calls and SMS
+
+Android OS Basics
+-----------------
+Modified Linux kernel
+Dalvik Virtual Machine
+Each app runs under a different UID unless a developer chooses to set several apps with the same signature share a UID
+/data/data is the home directory for applications/users
+APK file is a zipped archived. It contains code, metadata resources etc
+
+APK Packaging Process
+----------------------
+aapt converts XML resource to binary form
+aidl converts .aidl to .java
+All source code and output from aapt and aidl compiled into .class files by Java compiler
+dx converts .class files to a single classes.dex file
+apkbuilder combines all compiled resources, images and DEX file into an APK file
+jarsigner signs the APK
+
+Structure of an APK
+-------------------
+/assets -> Files that developers want to include
+/res -> Layout, images etc in raw subdirectory
+/lib -> Libraries x86, ARM, MIPS
+/META-INF -> Certificate of an application, file inventory with hashes
+AndroidManifest.xml -> Summary of the application, config details of the app, permissions that the app ask for etc
+classes.dex -> Executable file that contains Dalvik bytecode
+resources.rsrc -> Strings of the app, other resources
