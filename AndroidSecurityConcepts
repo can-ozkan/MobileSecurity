@@ -49,3 +49,16 @@ Activities -> Visual screens of an application
 Services -> Components with no GUI
 Broadcast Receivers -> can detect events like incoming SMS
 Content Providers -> data storehouse
+
+Code Signing
+------------
+Public Key Cryptography
+Private key is held only by app developers
+Generate key with keytool
+Sign app with jarsigner
+Signature in META-INF directory
+Android does not verify the certificate in any way
+Certificates do not need to come from a trusted CA
+Most are self-signed
+Certificate is checked only when app is being installed
+
