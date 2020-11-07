@@ -13,3 +13,5 @@ apktool
 -------
 apktool d <apk_name.apk> //for decompiling
 apktool b <folder> -o <new_apk_name.apk> //for rebuilding
+
+
