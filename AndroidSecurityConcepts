@@ -62,3 +62,18 @@ Certificates do not need to come from a trusted CA
 Most are self-signed
 Certificate is checked only when app is being installed
 
+Signing Vulnerabilities
+------------------------
+Master Key Vulnerabilitiy
+If two files are in the APK archive with the same file name. Only the first file's hash is checked. But the second is actually deployed to the device
+Potential RCE
+
+Understanding Permissions
+--------------------------
+Permissions that the app ask for will be declared in AndroidManifest.xml
+
+Application Sandboxing
+----------------------
+Each app runs as its own user unless it requests to run as sharedUserId and has the same signature as another application
+
+
