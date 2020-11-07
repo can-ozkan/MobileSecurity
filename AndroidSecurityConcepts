@@ -87,6 +87,25 @@ FDE is going away, replaced by file-based encryption
 SD card is not encrypted
 FDE protects data at rest
 
+Generic Exploit Mitigation Protections
+--------------------------------------
+Stack Cookies : Protects against basic stack-based overflows by including a canary value after the stack that is checked
+
+safe_iop : Provides a library that helps reduce integer overflows
+
+dlmalloc extensions : Helps prevent double free() vulnerabilities and other common ways to exploit heap corruptions
+
+calloc extensions : Helps prevent integer overflows during memory allocations
+
+Format String Protections : Helps prevent the exploitation of format string vulnerabilities
+
+
+NX (No eXecute) : Prevents code from running on the stack or heap
+Partial ASLR (Address Space Layout Randomization) : Randomizes the location of libraries and other memory segments in order to defeat a common exploitation
+technique called ROP (Return Oriented Programming)
+
+PIE (Position Independent Executable) Support : Supports ASLR to ensure all memory components are fully randomized
+
 
 
 
