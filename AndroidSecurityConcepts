@@ -75,5 +75,7 @@ Permissions that the app ask for will be declared in AndroidManifest.xml
 Application Sandboxing
 ----------------------
 Each app runs as its own user unless it requests to run as sharedUserId and has the same signature as another application
+Not a separate VM for each app. It is just a separate process
+Only Linux user and group permissions protect the application
 
 
