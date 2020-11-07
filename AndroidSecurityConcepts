@@ -36,3 +36,16 @@ Structure of an APK
 AndroidManifest.xml -> Summary of the application, config details of the app, permissions that the app ask for etc
 classes.dex -> Executable file that contains Dalvik bytecode
 resources.rsrc -> Strings of the app, other resources
+
+Drozer
+------
+Security assessment tool/framework that finds vulnerabilities and develops exploits
+Agent, console based tool
+Agent is installed on mobile device
+
+Application Components
+-----------------------
+Activities -> Visual screens of an application
+Services -> Components with no GUI
+Broadcast Receivers -> can detect events like incoming SMS
+Content Providers -> data storehouse
