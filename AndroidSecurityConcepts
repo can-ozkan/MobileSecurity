@@ -141,6 +141,27 @@ Attacking Internet Server
 Server may have vulnerabilities
 Compromised server exposes all information flowing to and from mobile devices
 
+targetSdkVersion : Determines default publishing of components. Other values are compileSdkVersion and minSdkVersion
+
+Explicitly Exporting Components
+--------------------
+Explicitly Exported : 
+  <receiver
+    android:name="com.xxx.receiver"
+    android:exported=true>
+  </receiver>
+  
+Unspecified; will be exported implicitly if targetSdkVersion < 17
+
+Implicitly Exported
+-------------------
+Any component that uses intent-filter is exported by default
+
+Finding Exported Components
+---------------------------
+Examine AndroidManifest.xml
+Drozer's attacksurface module shows exported components
+
 
 
 
