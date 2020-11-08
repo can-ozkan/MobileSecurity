@@ -193,6 +193,12 @@ Directly delivers the intent to the specified component
 am : Activity Manager -> Lets you send intents to application components
 adb shell am start -a android.intent.action.VIEW
 
+Recently Used Application Screenshots
+-------------------------------------
+May contain sensitive information
+Stored in RAM
+Only available to privileged users
+
 
 
 
