@@ -98,7 +98,25 @@ NX (No eXecute) : Prevents code from running on the stack or heap
 Partial ASLR (Address Space Layout Randomization) : Randomizes the location of libraries and other memory segments in order to defeat a common exploitation
 technique called ROP (Return Oriented Programming)
 PIE (Position Independent Executable) Support : Supports ASLR to ensure all memory components are fully randomized
+RELRO (Relocation Read-Only) and BIND_NOW : Hardens data section inside a process by making them read-only. This prevents common exploitation techniques such as
+GOT (Global Offset Table) overwrites
+FORTIFY_SOURCE : Replaces common C functions that are known to cause security problems with fortified versions
 
+Kernel Protections
+------------------
+Removed setuid/setguid programs : Removed all setuid/setgid programs and added support for filesystem capabilities instead
+Restrict setuid from installed apps : The /system partition is mounted as nosuid for all processes that were spawned by zygote, meaning that installed applications
+cannot abuse vulnerabilities in any suid binaries to gain root access
+
+Rooting Process
+---------------
+Android does not allow users to use root by default
+Rooting typicallt adds a su binary, allowing elavation to root
+
+Rooting Methods
+---------------
+Use an exploit (Examples : Gingerbreak, Exynos abuse, Samsung admire, Ace Iconia, Master Key, Towelroot)
+Use an unlocked bootloader : Flash new firmware onto the device
 
 
 
