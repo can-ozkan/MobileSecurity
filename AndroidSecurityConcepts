@@ -118,5 +118,9 @@ Rooting Methods
 Use an exploit (Examples : Gingerbreak, Exynos abuse, Samsung admire, Ace Iconia, Master Key, Towelroot)
 Use an unlocked bootloader : Flash new firmware onto the device (A new recovery image or a rooted kernel image containing su)
 
+Vulnerability Scanning
+----------------------
+Qark, AndroBugs, Drozer, MobSF (may produce some false-positives, manually check every vulnerability found by scanners)
+
 
 
