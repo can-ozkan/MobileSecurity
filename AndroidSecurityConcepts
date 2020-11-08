@@ -122,5 +122,26 @@ Vulnerability Scanning
 ----------------------
 Qark, AndroBugs, Drozer, MobSF (may produce some false-positives, manually check every vulnerability found by scanners)
 
+Attacking Application Container
+----------------------------
+Defeat application sandbox in order to gain access to the application
+Malicious applications on the device
+Physical access to the device
+Other vulnerabilities on the application
+
+Attacking Communication Issues
+--------------------
+ARP Poisoining
+Hosting a malicious wireless network
+Compromising upstream providers
+Intercept and modify traffic
+
+Attacking Internet Server
+-------------------------
+Server may have vulnerabilities
+Compromised server exposes all information flowing to and from mobile devices
+
+
+
 
 
