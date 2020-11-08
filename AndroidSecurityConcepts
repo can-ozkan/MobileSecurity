@@ -130,7 +130,7 @@ Physical access to the device
 Other vulnerabilities on the application
 
 Attacking Communication Issues
---------------------
+------------------------------
 ARP Poisoining
 Hosting a malicious wireless network
 Compromising upstream providers
@@ -143,8 +143,10 @@ Compromised server exposes all information flowing to and from mobile devices
 
 targetSdkVersion : Determines default publishing of components. Other values are compileSdkVersion and minSdkVersion
 
+Attacking Application Components
+--------------------------------
 Explicitly Exporting Components
---------------------
+-------------------------------
 Explicitly Exported : 
   <receiver
     android:name="com.xxx.receiver"
@@ -161,6 +163,37 @@ Finding Exported Components
 ---------------------------
 Examine AndroidManifest.xml
 Drozer's attacksurface module shows exported components
+
+Supreme User Contexts
+---------------------
+root and system users can interact with application components even when they are not exported at all
+Components that are not exported in the AndroidManifest.xml are private, meaning they are limited to internal use by the application. Only attackers who have
+root privileges can attack them
+
+Permission Protection Levels
+----------------------------
+If you define a new permission, developers need to assign a permission protection to that permission
+Best protection is a custom permission with protection level signature, meaning that only applications with same signature can have that permission
+
+Intents
+-----------------
+Intent is a data object that defines a task to be performed
+To start an activity, call startActivity(Intent)
+sendBroadcast(Intent) sends a broadcast to a broadcast receiver
+startService(Intent) sends to a service
+Intent is generic. It does not specify type of components receiving it
+
+Explicit Intents
+----------------
+State the component that must receive it
+Using setComponent() or setClass()
+Bypasses the intent resolution process in the OS
+Directly delivers the intent to the specified component
+
+am : Activity Manager -> Lets you send intents to application components
+adb shell am start -a android.intent.action.VIEW
+
+
 
 
 
