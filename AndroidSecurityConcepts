@@ -237,6 +237,83 @@ Unprotected Started Services
 The onStartCommand() method receives intents for this service from apps. Auditor should read the code to assess the risk
 run.app.service.start in Drozer to interact with these started services
 
+Accessing Storage and Logging
+-----------------------------
+File and Folder Permissions
+----------------------------
+-rw------- (10 chars in permissions section)
+First char : - for file, d for directory
+Next 3 chars : rwx for owner (user)
+Next 3 chars : rwx for group
+Next 3 chars : rwx for others
+
+Umask
+-----
+Determines default permissions for newly created files and folders
+For Android 4.0 and newer, umask is 0077, meaning applications have rwx------, that is, owner-only
+
+File Encryption
+---------------
+Encrypting files protects them from attackers
+Problem : Where do you put the key??? (Often in the source code, where attackers can easily find it)
+SQLCipher is often used in this way
+
+SQLiteDatabase database = SQLiteDatabase.openOrCreateDatabase(databaseFile, "test123", null);
+
+Logging
+-------
+Useful for developers
+Applications with READ_LOGS permission can read the logs
+Android 4.1 and later changed READ_LOGS to signature | system | development
+
+Misuing Insecure Communications
+-------------------------------
+Certificate Pinning
+-------------------
+Apps check TLS certificate with custom code. It won't accept the "Trusted Credentials" in Android
+--"Bypass SSL pinning"-- to overcome this issue
+
+SSL Validation Flaws
+--------------------
+Developers often disable validation in the app
+  For testing and to prevent annoying error messages
+  By adding a HostNameVerifier method returning true
+  
+WebView
+-------
+WebView allows a web page to be rendered within an app
+
+Exploiting WebView
+------------------
+If it loads content over HTTP, add code to the page with a MITM attack
+Send a malicious intent with an extra containing URI like 
+  file:///data/data/...
+  
+Clipboard Vulnerabilities
+-------------------------
+Data can be read and written by any application
+Password managers often use the clipboard to move password into an application
+Drozer can read the clipboard -> run post.capture.clipboard
+
+Abusing Native Code
+-------------------
+Compiled C/C++ code
+Analyze them with IDA, Ghidra etc
+Vulnerabilities like buffer overflow, format string vulnerabilities, heap overflow, bypassing canary token etc
+
+Layered Security
+----------------
+Perform Certificate pinning. Application will check TLS certificate, and won't accept a proxy like Burp
+Root detection
+Patching apps : modify code with apktool (Mitigation : Arxan, Dash-o)
+Manipulating the run-time (hooking) - Cydia Substrate, Frida, Xposed Framework
+
+
+
+
+
+
+
 
 
 
