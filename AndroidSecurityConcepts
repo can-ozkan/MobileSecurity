@@ -216,10 +216,26 @@ Drozer Finding Tables -> run scanner.provider.sqltables
 
 File-Backed Content Providers
 -----------------------------
+A content provider may allow other apps to retrieve files 
+URI should be validated against a whitelist of allowed files or folders. Otherwise, it allows an attacker to reference other files such as /system/etc/hosts, resulting
+in Local File Inclusion Vulnerability
 
+Detect Directory Traversal Vulnerability
+----------------------------------------
+Run Drozer -> run scanner.provider.traversal -a content://...
 
 Attacking Insecure Services
---------------------------
+---------------------------
+Services
+--------
+Run code that must keep running even when the app is not in the foreground
+Services can be started with an intent like activities
+An application can also bind to a service
+
+Unprotected Started Services
+----------------------------
+The onStartCommand() method receives intents for this service from apps. Auditor should read the code to assess the risk
+run.app.service.start in Drozer to interact with these started services
 
 
 
