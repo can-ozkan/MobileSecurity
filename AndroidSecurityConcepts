@@ -199,6 +199,29 @@ May contain sensitive information
 Stored in RAM
 Only available to privileged users
 
+Exploiting Insecure Content Providers
+-------------------------------------
+Unprotected Content Providers
+-----------------------------
+All content providers were exported by default for target SDK < API 17
+For target SDK >=17, there are private by default
+Not explicitly marked marked exported="false" in AndroidManifest.xml
+Run drozer -> run app.provider.info
+No permission is required except for /Keys path
+Find strings that begin with content://
+Run drozer -> run scanner.provider.finduris -a <...>
+Run drozer -> run app.provider.query content://...
+Drozer Finding Tables -> run scanner.provider.sqltables
+
+
+File-Backed Content Providers
+-----------------------------
+
+
+Attacking Insecure Services
+--------------------------
+
+
 
 
 
